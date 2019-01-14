@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Our Team{% endblock %}
+{% block extraCss %}{% endblock %}
+{% block extraJs %}{% endblock %}
+
+
+  {% block main_block %}
+
+
+    <!-- Page Header -->
+
+    {% for a in about %}
+    <header class="masthead" style="background-image: url('{{ a.image.url }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>{{ a.title }}</h1>
+              <span class="subheading">{{ a.sub_title }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% endfor %}
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+      {% for ap in ap %}
+      
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <p>{{ ap.des }}</p>
+        </div>
+
+      {% endfor %}
+      </div>
+    </div>
+
+    <hr>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}contact  us{% endblock %}
+{% block extraCss %}{% endblock %}
+{% block extraJs %}{% endblock %}
+
+
+  {% block main_block %}
+
+
+    <!-- Page Header -->
+    {% for contact in contact %}
+    <header class="masthead" style="background-image: url('{{ contact.image.url }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>{{ contact.contact }}</h1>
+              <span class="subheading">{{ contact.contact_sub }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% endfor %}
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        {% for p in contactP %}
+        
+          <p>{{ p.simple_condition }}</p>
+
+        {% endfor %}
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+          <form action="" method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+              </div>              
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+{% endblock %}

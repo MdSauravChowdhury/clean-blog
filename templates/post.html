@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}This is main content page{% endblock %}
+{% block extraCss %}{% endblock %}
+{% block extraJs %}{% endblock %}
+
+
+
+
+  {% block main_block %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ single_post.post_image.url }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+                <h1>{{ single_post.title }}</h1>
+              <h2 class="subheading">{{ single_post.sub_title }}</h2>
+              <span class="meta">Posted by
+                <a href="#">Start Bootstrap</a>
+                {{ single_post.posted }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">          
+
+            <p>{{ single_post.descriptions }}</p>
+
+            <h2 class="section-heading">The Final Frontier</h2>
+
+            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+
+            <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+
+            <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+
+
+            <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+
+            <p>Placeholder text by
+              <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
+              <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <hr>
+    {% endblock %}
